@@ -52,7 +52,6 @@
         "visible": true,
         "canEdit": false,
         "queryable": false,
-        "displayInLegend": false,
         "displayInLayerList": false,
         "zIndex": 1,
         "queryParams": ["table_name"],
@@ -266,41 +265,6 @@
         "style": {
           "format": "geostyler",
           "url": "./static/layer-styles/styles/ways_lit.json"
-        }
-      },
-      {
-        "type": "VECTOR",
-        "format": "GeoJSON",
-        "name": "ways_score_sidewalk",
-        "url": "https://sidewalk-spgg.cs.washington.edu/v2/access/score/streets?lat1=25.58979250300007&lng1=-100.42745194299994&lat2=25.715678945000036&lng2=-100.31256806399995&filetype=geojson",
-        "group": "streetlevelqualityLayers",
-        "opacity": 1,
-        "queryable": true,
-        "visible": false,
-        "canEdit": false,
-        "displayInLayerList": true,
-        "zIndex": 1,
-        "maxResolution": 7,
-        "style": {
-          "format": "geostyler",
-          "url": "./static/layer-styles/styles/ways_sidewalk.json"
-        }
-      },
-      {
-        "type": "VECTOR",
-        "format": "GeoJSON",
-        "name": "points_mapillary",
-        "url": "/api/map/layer_read",
-        "group": "streetlevelqualityLayers",
-        "visible": true,
-        "canEdit": false,
-        "queryable": false,
-        "displayInLayerList": true,
-        "zIndex": 1,
-        "queryParams": ["table_name"],
-        "style": {
-          "format": "geostyler",
-          "url": "./static/layer-styles/styles/points_mapillary.json"
         }
       },
       {
@@ -1253,7 +1217,15 @@
           "id": 1,
           "children": [
             {
-              "name": "Pre-primary school",
+              "name": "Nursery",
+              "value": "nursery",
+              "icon": "nursery",
+              "weight": 1,
+              "sensitivity": 300000,
+              "locked": false
+            },
+            {
+              "name": "Kindergarten",
               "value": "kindergarten",
               "icon": "kindergarten",
               "weight": 1,
@@ -1297,9 +1269,23 @@
               "sensitivity": 300000
             },
             {
-              "name": "Caféteria",
+              "name": "Biergarten",
+              "value": "biergarten",
+              "icon": "biergarten",
+              "weight": 1,
+              "sensitivity": 300000
+            },
+            {
+              "name": "Café",
               "value": "cafe",
               "icon": "cafe",
+              "weight": 1,
+              "sensitivity": 300000
+            },
+            {
+              "name": "Pub",
+              "value": "pub",
+              "icon": "pub",
               "weight": 1,
               "sensitivity": 300000
             },
@@ -1307,6 +1293,13 @@
               "name": "Fast food",
               "value": "fast_food",
               "icon": "fast_food",
+              "weight": 1,
+              "sensitivity": 300000
+            },
+            {
+              "name": "Ice cream",
+              "value": "ice_cream",
+              "icon": "ice_cream",
               "weight": 1,
               "sensitivity": 300000
             },
@@ -1332,9 +1325,129 @@
           "locked": false,
           "children": [
             {
+              "name": "Bicycle rental",
+              "value": "bicycle_rental",
+              "icon": "bicycle_rental",
+              "weight": 1,
+              "sensitivity": 300000
+            },
+            {
+              "name": "Car sharing",
+              "value": "car_sharing",
+              "icon": "car_sharing",
+              "weight": 1,
+              "sensitivity": 300000
+            },
+            {
+              "name": "Charging station",
+              "value": "charging_station",
+              "icon": "charging_station",
+              "weight": 1,
+              "sensitivity": 300000,
+              "locked": false
+            },
+            {
               "name": "Bus",
               "value": "bus_stop",
               "icon": "bus_stop",
+              "weight": 1,
+              "sensitivity": 300000
+            },
+            {
+              "name": "Tram Stop",
+              "value": "tram_stop",
+              "icon": "tram_stop",
+              "weight": 1,
+              "sensitivity": 300000
+            },
+            {
+              "name": "U-Bahn station",
+              "value": "subway_entrance",
+              "icon": "subway_entrance",
+              "weight": 1,
+              "sensitivity": 300000
+            },
+            {
+              "name": "Rail Station",
+              "value": "rail_station",
+              "icon": "rail_station",
+              "weight": 1,
+              "sensitivity": 300000
+            },
+            {
+              "name": "Taxi",
+              "value": "taxi",
+              "icon": "taxi",
+              "weight": 1,
+              "sensitivity": 300000
+            }
+          ]
+        },
+        {
+          "name": "mobilitystations",
+          "categoryValue": "mobilitystations",
+          "locked": false,
+          "children": [
+            {
+              "name": "Bikesharing FFB",
+              "value": "bikesharing_ffb",
+              "icon": "bikesharing",
+              "weight": 1,
+              "sensitivity": 300000
+            },
+            {
+              "name": "Carsharing FFB",
+              "value": "carsharing_ffb",
+              "icon": "carsharing",
+              "weight": 1,
+              "sensitivity": 300000
+            },
+            {
+              "name": "Charging Station FFB",
+              "value": "charging_station_marker_ffb",
+              "icon": "charging_station_marker",
+              "weight": 1,
+              "sensitivity": 300000
+            },
+            {
+              "name": "Charging Station Other FFB",
+              "value": "charging_station_other_ffb",
+              "icon": "charging_station_other",
+              "weight": 1,
+              "sensitivity": 300000
+            },
+            {
+              "name": "Charging Station Public FFB",
+              "value": "charging_station_public_ffb",
+              "icon": "charging_station_public",
+              "weight": 1,
+              "sensitivity": 300000
+            },
+            {
+              "name": "E-Parking FFB",
+              "value": "e_parking_ffb",
+              "icon": "e_parking",
+              "weight": 1,
+              "sensitivity": 300000
+            },
+            {
+              "name": "L-Station FFB",
+              "value": "l-station_ffb",
+              "icon": "l-station",
+              "weight": 1,
+              "sensitivity": 300000
+            },
+            {
+              "name": "S-Station Prio 1 FFB",
+              "value": "s-station_prio1_ffb",
+              "icon": "s-station_prio1",
+              "weight": 1,
+              "sensitivity": 300000
+            },
+            {
+              "name": "S-Station Prio 2 FFB",
+              "value": "s-station_prio2_ffb",
+              "icon": "s-station_prio2",
               "weight": 1,
               "sensitivity": 300000
             }
@@ -1388,7 +1501,7 @@
               "sensitivity": 300000
             },
             {
-              "name": "Post",
+              "name": "Post box",
               "value": "post_box",
               "icon": "post_box",
               "weight": 1,
@@ -1400,6 +1513,14 @@
               "icon": "fuel",
               "weight": 1,
               "sensitivity": 300000
+            },
+            {
+              "name": "Recycling",
+              "value": "recycling",
+              "icon": "recycling",
+              "weight": 1,
+              "sensitivity": 300000,
+              "locked": false
             }
           ]
         },
@@ -1408,7 +1529,7 @@
           "categoryValue": "shop",
           "children": [
             {
-              "name": "Tortilleria",
+              "name": "Bakery",
               "value": "bakery",
               "icon": "bakery",
               "weight": 1,
@@ -1429,7 +1550,7 @@
               "sensitivity": 300000
             },
             {
-              "name": "Grocery",
+              "name": "Convenience store",
               "value": "convenience",
               "icon": "convenience",
               "weight": 1,
@@ -1471,9 +1592,37 @@
               "sensitivity": 300000
             },
             {
-              "name": "Minisup",
+              "name": "Discount Supermarket",
               "value": "discount_supermarket",
               "icon": "discount_supermarket",
+              "weight": 1,
+              "sensitivity": 300000
+            },
+            {
+              "name": "International Supermarket",
+              "value": "international_supermarket",
+              "icon": "international_supermarket",
+              "weight": 1,
+              "sensitivity": 300000
+            },
+            {
+              "name": "Hypermarket",
+              "value": "hypermarket",
+              "icon": "hypermarket",
+              "weight": 1,
+              "sensitivity": 300000
+            },
+            {
+              "name": "Chemist",
+              "value": "chemist",
+              "icon": "chemist",
+              "weight": 1,
+              "sensitivity": 300000
+            },
+            {
+              "name": "Organic Food",
+              "value": "organic",
+              "icon": "organic",
               "weight": 1,
               "sensitivity": 300000
             },
@@ -1519,9 +1668,30 @@
               "sensitivity": 300000
             },
             {
+              "name": "Hostel",
+              "value": "hostel",
+              "icon": "hostel",
+              "weight": 1,
+              "sensitivity": 300000
+            },
+            {
               "name": "Guest house",
               "value": "guest_house",
               "icon": "guest_house",
+              "weight": 1,
+              "sensitivity": 300000
+            },
+            {
+              "name": "Gallery",
+              "value": "gallery",
+              "icon": "gallery",
+              "weight": 1,
+              "sensitivity": 300000
+            },
+            {
+              "name": "Playground",
+              "value": "playground",
+              "icon": "playground",
               "weight": 1,
               "sensitivity": 300000
             }
@@ -1532,6 +1702,13 @@
           "categoryValue": "sports",
           "children": [
             {
+              "name": "Community Sport Center",
+              "value": "community_sports_center",
+              "icon": "community_sports_center",
+              "weight": 1,
+              "sensitivity": 300000
+            },
+            {
               "name": "Waterpark",
               "value": "waterpark",
               "icon": "waterpark",
@@ -1539,16 +1716,23 @@
               "sensitivity": 300000
             },
             {
-              "name": "Gym",
+              "name": "Discount Gym",
+              "value": "discount_gym",
+              "icon": "discount_gym",
+              "weight": 1,
+              "sensitivity": 300000
+            },
+            {
+              "name": "gym",
               "value": "gym",
               "icon": "gym",
               "weight": 1,
               "sensitivity": 300000
             },
             {
-              "name": "Sport Club",
-              "value": "sport_club",
-              "icon": "sport_club",
+              "name": "Yoga",
+              "value": "yoga",
+              "icon": "yoga",
               "weight": 1,
               "sensitivity": 300000
             }

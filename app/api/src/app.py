@@ -332,6 +332,8 @@ class LayerRead(Resource):
             prepared_query = '''SELECT * FROM study_area'''
         elif table_name == 'modeshare':
             prepared_query = '''SELECT * FROM modeshare'''
+        elif table_name == 'points_mapillary':
+            prepared_query = '''SELECT * FROM points_mapillary'''
 
         else:
             return {

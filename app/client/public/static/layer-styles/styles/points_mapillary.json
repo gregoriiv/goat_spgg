@@ -1,0 +1,50 @@
+{
+  "name": "points_mapillary",
+  "rules": [
+    {
+      "name": "bench",
+      "filter": [
+        "==",
+        "value",
+        "object--bench"
+      ],
+      "symbolizers": [
+        {
+          "kind": "Mark",
+          "color": "#e7000e",
+          "wellKnownName": "Star"
+        }
+      ]
+    },
+    {
+      "name": "street-light",
+      "filter": [
+        "==",
+        "value",
+        "object--street-light"
+      ],
+      "symbolizers": [
+        {
+          "kind": "Mark",
+          "color": "#42ca00",
+          "wellKnownName": "Star"
+        }
+      ]
+    },
+    {
+      "name": "trash-can",
+      "filter": [
+        "==",
+        "value",
+        "object--trash-can"
+      ],
+      "symbolizers": [
+        {
+          "kind": "Mark",
+          "color": "#611e82",
+          "wellKnownName": "Star"
+        }
+      ]
+    }
+  ]
+}
