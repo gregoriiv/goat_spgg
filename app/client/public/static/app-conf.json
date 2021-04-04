@@ -732,7 +732,7 @@
         "visible": false,
         "canEdit": false,
         "queryable": true,
-        "displayInLayerList": true,
+        "displayInLayerList": false,
         "zIndex": 1,
         "serverType": "geoserver",
         "style": {
@@ -754,7 +754,7 @@
         "queryable": true,
         "visible": false,
         "canEdit": false,
-        "displayInLayerList": true,
+        "displayInLayerList": false,
         "zIndex": 1,
         "attributes": {
           "source": "Statistikportal",
@@ -771,7 +771,7 @@
         "queryable": true,
         "visible": false,
         "canEdit": false,
-        "displayInLayerList": true,
+        "displayInLayerList": false,
         "zIndex": 1,
         "attributes": {
           "source": "Statistikportal",
@@ -787,7 +787,7 @@
         "visible": false,
         "canEdit": false,
         "queryable": true,
-        "displayInLayerList": true,
+        "displayInLayerList": false,
         "zIndex": 1,
         "queryParams": [],
         "style": {
@@ -809,7 +809,7 @@
         "queryable": true,
         "visible": false,
         "canEdit": false,
-        "displayInLayerList": true,
+        "displayInLayerList": false,
         "zIndex": 1,
         "attributes": {
           "source": "Statistikportal",
@@ -826,7 +826,7 @@
         "queryable": true,
         "visible": false,
         "canEdit": false,
-        "displayInLayerList": true,
+        "displayInLayerList": false,
         "zIndex": 1,
         "attributes": {
           "source": "Statistikportal",
@@ -843,7 +843,7 @@
         "queryable": true,
         "visible": false,
         "canEdit": false,
-        "displayInLayerList": true,
+        "displayInLayerList": false,
         "zIndex": 1,
         "style": {
           "format": "geostyler",
@@ -864,7 +864,7 @@
         "queryable": true,
         "visible": false,
         "canEdit": false,
-        "displayInLayerList": true,
+        "displayInLayerList": false,
         "legendGraphicUrl": "./img/legend-graphics/legend_mode_share.png",
         "queryParams": ["table_name"],
         "zIndex": 1,
