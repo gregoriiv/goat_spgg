@@ -144,49 +144,6 @@
       {
         "type": "VECTORTILE",
         "format": "MVT",
-        "name": "landuse",
-        "url": "/api/map/layer/landuse_api/{z}/{x}/{y}",
-        "group": "buildings_landuse",
-        "visible": false,
-        "canEdit": false,
-        "queryable": true,
-        "displayInLayerList": true,
-        "zIndex": 1,
-        "maxResolution": 10,
-        "queryParams": [],
-        "style": {
-          "format": "geostyler",
-          "url": "./static/layer-styles/styles/landuse_atkis.json"
-        },
-        "attributes": {
-          "source": "Datenbestände des ATKIS Basis-DLM der Länder",
-          "date": "2019"
-        }
-      },
-      {
-        "type": "VECTORTILE",
-        "format": "MVT",
-        "name": "landuse_osm",
-        "url": "/api/map/layer/landuse_osm/{z}/{x}/{y}",
-        "group": "buildings_landuse",
-        "visible": false,
-        "canEdit": false,
-        "queryable": true,
-        "displayInLayerList": true,
-        "zIndex": 1,
-        "queryParams": [],
-        "style": {
-          "format": "geostyler",
-          "url": "./static/layer-styles/styles/landuse_osm.json"
-        },
-        "attributes": {
-          "source": "openStreetMap",
-          "date": "07-03-2021"
-        }
-      },
-      {
-        "type": "VECTORTILE",
-        "format": "MVT",
         "name": "buildings",
         "url": "/api/map/layer/buildings/{z}/{x}/{y}",
         "group": "buildings_landuse",
@@ -226,10 +183,23 @@
         "style": {
           "format": "geostyler",
           "url": "./static/layer-styles/styles/study_area.json"
-        },
-        "attributes": {
-          "source": "Landeshauptstadt München",
-          "date": "2020"
+        }
+      },
+      {
+        "type": "VECTOR",
+        "format": "GeoJSON",
+        "name": "landuse",
+        "url": "/api/map/layer_read",
+        "group": "buildings_landuse",
+        "visible": false,
+        "canEdit": false,
+        "queryable": true,
+        "displayInLayerList": true,
+        "zIndex": 1,
+        "queryParams": ["table_name"],
+        "style": {
+          "format": "geostyler",
+          "url": "./static/layer-styles/styles/landuse_spgg.json"
         }
       },
       {
@@ -242,7 +212,7 @@
         "queryable": true,
         "visible": false,
         "canEdit": false,
-        "displayInLayerList": true,
+        "displayInLayerList": false,
         "zIndex": 1,
         "maxResolution": 7,
         "style": {
@@ -271,7 +241,7 @@
       {
         "type": "VECTOR",
         "format": "GeoJSON",
-        "name": "ways_score_sidewalk",
+        "name": "ways_Project_Sidewalk",
         "url": "https://sidewalk-spgg.cs.washington.edu/v2/access/score/streets?lat1=25.58979250300007&lng1=-100.42745194299994&lat2=25.715678945000036&lng2=-100.31256806399995&filetype=geojson",
         "group": "streetlevelqualityLayers",
         "opacity": 1,
@@ -292,7 +262,7 @@
         "name": "points_mapillary",
         "url": "/api/map/layer_read",
         "group": "streetlevelqualityLayers",
-        "visible": true,
+        "visible": false,
         "canEdit": false,
         "queryable": false,
         "displayInLayerList": true,
@@ -313,7 +283,7 @@
         "queryable": true,
         "visible": false,
         "canEdit": false,
-        "displayInLayerList": true,
+        "displayInLayerList": false,
         "zIndex": 1,
         "maxResolution": 7,
         "style": {
@@ -331,7 +301,7 @@
         "queryable": true,
         "visible": false,
         "canEdit": false,
-        "displayInLayerList": true,
+        "displayInLayerList": false,
         "zIndex": 1,
         "maxResolution": 7,
         "style": {
@@ -349,7 +319,7 @@
         "queryable": true,
         "visible": false,
         "canEdit": false,
-        "displayInLayerList": true,
+        "displayInLayerList": false,
         "zIndex": 1,
         "maxResolution": 7,
         "style": {
@@ -367,7 +337,7 @@
         "queryable": true,
         "visible": false,
         "canEdit": false,
-        "displayInLayerList": true,
+        "displayInLayerList": false,
         "zIndex": 1,
         "maxResolution": 7,
         "style": {
@@ -385,7 +355,7 @@
         "queryable": true,
         "visible": false,
         "canEdit": false,
-        "displayInLayerList": true,
+        "displayInLayerList": false,
         "zIndex": 1,
         "maxResolution": 7,
         "style": {
@@ -403,7 +373,7 @@
         "queryable": true,
         "visible": false,
         "canEdit": false,
-        "displayInLayerList": true,
+        "displayInLayerList": false,
         "zIndex": 1,
         "maxResolution": 7,
         "style": {
@@ -421,7 +391,7 @@
         "queryable": true,
         "visible": false,
         "canEdit": false,
-        "displayInLayerList": true,
+        "displayInLayerList": false,
         "zIndex": 1,
         "maxResolution": 7,
         "style": {
@@ -432,7 +402,7 @@
       {
         "type": "VECTORTILE",
         "format": "MVT",
-        "name": "street_crossings",
+        "name": "street_crossings_osm",
         "url": "/api/map/layer/street_crossings/{z}/{x}/{y}",
         "group": "streetlevelqualityLayers",
         "opacity": 1,
@@ -454,7 +424,7 @@
       {
         "type": "VECTORTILE",
         "format": "MVT",
-        "name": "street_furniture",
+        "name": "street_furniture_osm",
         "url": "/api/map/layer/street_furniture/{z}/{x}/{y}",
         "group": "streetlevelqualityLayers",
         "opacity": 1,
@@ -483,7 +453,7 @@
         "visible": false,
         "canEdit": false,
         "queryable": true,
-        "displayInLayerList": true,
+        "displayInLayerList": false,
         "zIndex": 2,
         "maxResolution": 7,
         "style": {
@@ -505,7 +475,7 @@
         "visible": false,
         "canEdit": false,
         "queryable": true,
-        "displayInLayerList": true,
+        "displayInLayerList": false,
         "zIndex": 2,
         "style": {
           "format": "geostyler",
@@ -526,7 +496,7 @@
         "visible": false,
         "canEdit": false,
         "queryable": true,
-        "displayInLayerList": true,
+        "displayInLayerList":false,
         "zIndex": 1,
         "maxResolution": 10,
         "style": {
@@ -544,7 +514,7 @@
         "queryable": true,
         "visible": false,
         "canEdit": false,
-        "displayInLayerList": true,
+        "displayInLayerList": false,
         "zIndex": 1,
         "attributes": {
           "source": "Bayerisches Landesamt für Umwelt",
@@ -561,7 +531,7 @@
         "queryable": true,
         "visible": false,
         "canEdit": false,
-        "displayInLayerList": true,
+        "displayInLayerList": false,
         "zIndex": 1,
         "attributes": {
           "source": "Bayerisches Landesamt für Umwelt",
@@ -578,7 +548,7 @@
         "queryable": true,
         "visible": false,
         "canEdit": false,
-        "displayInLayerList": true,
+        "displayInLayerList": false,
         "zIndex": 1,
         "attributions": {
           "source": "Bayerisches Landesamt für Umwelt",
@@ -595,7 +565,7 @@
         "queryable": true,
         "visible": false,
         "canEdit": false,
-        "displayInLayerList": true,
+        "displayInLayerList": false,
         "zIndex": 1,
         "attributes": {
           "source": "Bayerisches Landesamt für Umwelt",
@@ -612,7 +582,7 @@
         "queryable": true,
         "visible": false,
         "canEdit": false,
-        "displayInLayerList": true,
+        "displayInLayerList": false,
         "zIndex": 1,
         "attributes": {
           "source": "Bayerisches Landesamt für Umwelt",
@@ -629,7 +599,7 @@
         "queryable": true,
         "visible": false,
         "canEdit": false,
-        "displayInLayerList": true,
+        "displayInLayerList": false,
         "zIndex": 1,
         "attributes": {
           "source": "Bayerisches Landesamt für Umwelt",
@@ -646,7 +616,7 @@
         "queryable": true,
         "visible": false,
         "canEdit": false,
-        "displayInLayerList": true,
+        "displayInLayerList": false,
         "zIndex": 1,
         "attributes": {
           "source": "Bayerisches Landesamt für Umwelt",
@@ -663,7 +633,7 @@
         "queryable": true,
         "visible": false,
         "canEdit": false,
-        "displayInLayerList": true,
+        "displayInLayerList": false,
         "zIndex": 1,
         "attributes": {
           "source": "Bayerisches Staatsministerium für Wirtschaft, Landesentwicklung und Energie",
@@ -680,7 +650,7 @@
         "queryable": true,
         "visible": false,
         "canEdit": false,
-        "displayInLayerList": true,
+        "displayInLayerList": false,
         "zIndex": 1,
         "attributes": {
           "source": "Bayerisches Landesamt für Umwelt",
@@ -698,7 +668,7 @@
         "queryable": true,
         "visible": false,
         "canEdit": false,
-        "displayInLayerList": true,
+        "displayInLayerList": false,
         "zIndex": 1,
         "attributes": {
           "source": "Bayerisches Landesamt für Umwelt",
@@ -715,7 +685,7 @@
         "queryable": true,
         "visible": false,
         "canEdit": false,
-        "displayInLayerList": true,
+        "displayInLayerList": false,
         "zIndex": 1,
         "attributes": {
           "source": "Bayerisches Landesamt für Umwelt",
@@ -944,7 +914,7 @@
         "displayInLayerList": true,
         "visible": false,
         "zIndex": 1,
-        "concurrentRequests": false,
+        "concurrentRequests": true,
         "queryParams": ["heatmap_type", "scenario_id_input", "modus_input"],
         "style": {
           "format": "geostyler",
